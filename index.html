@@ -78,47 +78,54 @@
           </div>
           <div>
             <ul role="list" class="numbered-items | flow">
+              <!-- Instead of adding the flow class to every li , we 
+              created a new div at each li and gave it the class , 
+            that's beause we want the spacing between the list items to
+          be large , but between the h3 and the p in each li we want
+        the space to be smaller , that's why we gave the variable
+      --flow-spacer a value here in each div .  -->
               <li>
                 <div class="flow" style="--flow-spacer: 1.5em">
-                <h3 class="fs-600 fw-bold">Track company-wide progress</h3>
-                <p>
-                  See how your day-to-day tasks fit into the wider vision. Go from 
-tracking progress at the milestone level all the way done to the 
-smallest of details. Never lose sight of the bigger picture again.
-                </p>
+                  <h3 class="fs-600 fw-bold">Track company-wide progress</h3>
+                  <p data-width="wide">
+                    See how your day-to-day tasks fit into the wider vision. Go from
+                    tracking progress at the milestone level all the way done to the
+                    smallest of details. Never lose sight of the bigger picture again.
+                  </p>
                 </div>
               </li>
               <li>
                 <div class="flow" style="--flow-spacer: 1.5em">
-                <h3 class="fs-600 fw-bold">
-                  Advanced built-in reports
-                </h3>
-                <p>
-                  Set internal delivery estimates and track progress toward company 
-goals. Our customisable dashboard helps you build out the reports 
-you need to keep key stakeholders informed.
+                  <h3 class="fs-600 fw-bold">
+                    Advanced built-in reports
+                  </h3>
+                  <p data-width="wide">
+                    Set internal delivery estimates and track progress toward company
+                    goals. Our customisable dashboard helps you build out the reports
+                    you need to keep key stakeholders informed.
 
-                </p>
+                  </p>
                 </div>
               </li>
               <li>
                 <div class="flow" style="--flow-spacer: 1.5em">
-                <h3 class="fs-600 fw-bold">
-                  Everything you need in one place
-                </h3>
-                <p>
-                  Stop jumping from one service to another to communicate, store files, 
-track tasks and share documents. Manage offers an all-in-one team 
-productivity solution.
-                </p>
+                  <h3 class="fs-600 fw-bold">
+                    Everything you need in one place
+                  </h3>
+                  <p data-width="wide">
+                    Stop jumping from one service to another to communicate, store files,
+                    track tasks and share documents. Manage offers an all-in-one team
+                    productivity solution.
+                  </p>
                 </div>
-              </li>            </ul>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="carousel | padding-block-700">
+    <section class="carousel | padding-block-900">
       <h2 class="fs-secondary-heading fw-bold">What they've said</h2>
       <!-- carousel here -->
       <button class="btn">Get Started</button>
@@ -168,7 +175,7 @@ productivity solution.
           </div>
           <div>
             <nav class="footer-nav">
-              <ul aria-label="footer" role="list">
+              <ul class="flow"  aria-label="footer" role="list">
                 <li><a href="">Home</a></li>
                 <li><a href="">Pricing</a></li>
                 <li><a href="">Products</a></li>
