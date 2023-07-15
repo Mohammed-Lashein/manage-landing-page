@@ -133,13 +133,7 @@ picture {
 }
 
 
-@media (min-width: 50em) {
-  /* 50em === 800px */
-  .even-columns {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-  }
-}
+
 .padding-block-900 {
   padding-block: var(--size-900);
 }
@@ -265,6 +259,30 @@ p[data-width='wide'] {
 }
 .primary-header .mobile-nav-toggle-js {
   display: none;
+}
+
+/* cta */
+.cta {
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('images/bg-tablet-pattern.svg'),
+  url('images/bg-tablet-pattern.svg');
+  background-position: -15rem -5rem, 75rem -45rem;;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+
+}
+@media screen and (min-width: 50em) {
+  .cta {
+    text-align: left;
+  }
 }
 
 @media screen and (max-width: 50em) {
@@ -410,6 +428,34 @@ are the ones which will change on media query .  */
   display: grid;
   gap: 1rem;
 }
+@media (min-width: 50em) {
+  /* 50em === 800px */
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+.justify-self-end-md {
+  justify-self: end;
+  /* margin-left: auto; */
+  /* Because our container is a grid, so we had the ability
+  to make our element go to the end using a css property
+  and with not playing with margins . We could also use 
+  the above property to modify the left margin and it will
+  give the same effect .  */
+}
+@media (max-width: 600px) {
+  .justify-self-end-md {
+    justify-self: center;
+  }
+}
+.vertical-align-center {
+  align-items: center;
+  /* The use of this class is to align the button a little
+  bit with the text in the cta container . */
+}
+
 .nav-list {
   font-size: var(--fs-nav);
 }
