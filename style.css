@@ -2,7 +2,7 @@
   --clr-accent-500: hsl(12, 50%, 40%);
   --clr-accent-400: hsl(12, 88%, 59%);
   --clr-accent-300: hsl(12, 88%, 75%);
-  --clr-accent-100: hsl(13, 100%, 96%);
+  --clr-accent-100: hsl(0, 0%, 100%);
 
   --clr-primary-400: hsl(228, 39%, 23%);
 
@@ -20,15 +20,15 @@
   --fw-bold: 700;
 
   --fs-300: .8125rem;
-  --fs-400: .875rem ;
-  --fs-500: .9375rem; 
+  --fs-400: .875rem;
+  --fs-500: .9375rem;
   /* .9375rem = 15px */
   --fs-600: 1rem;
   --fs-700: 1.875rem;
   --fs-800: 2.5rem;
   --fs-900: 3.5rem;
 
-  --fs-body : var(--fs-400);
+  --fs-body: var(--fs-400);
   --fs-primary-heading: var(--fs-800);
   --fs-secondary-heading: var(--fs-700);
   --fs-nav: var(--fs-500);
@@ -48,6 +48,7 @@
 }
 
 @media screen and (max-width: 50em) {
+
   /* - 50em = 800px
   - 3.5rem = 56px */
   :root {
@@ -56,7 +57,7 @@
 
     --fs-body: var(--fs-500);
     --fs-primary-heading: var(--fs-900);
-    --fs-secondary-heading: var(--fs-800); 
+    --fs-secondary-heading: var(--fs-800);
     --fs-nav: var(--fs-300);
   }
 }
@@ -65,7 +66,7 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Remove default margin */
@@ -82,12 +83,12 @@
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
-	list-style: none;
+  list-style: none;
 }
 
 /* Set core root defaults */
 html:focus-within {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -97,39 +98,39 @@ body {
 
 /* Set core body defaults */
 body {
-	
-	text-rendering: optimizeSpeed;
-	line-height: 1.5;
+
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-	text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
 img,
 picture {
-	max-width: 100%;
-	display: block;
+  max-width: 100%;
+  display: block;
 }
 
 
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-	html:focus-within {
-		scroll-behavior: auto;
-	}
+  html:focus-within {
+    scroll-behavior: auto;
+  }
 
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 
@@ -137,6 +138,7 @@ picture {
 .padding-block-900 {
   padding-block: var(--size-900);
 }
+
 .padding-block-700 {
   padding-block: var(--size-700);
 }
@@ -147,6 +149,7 @@ body {
   font-family: var(--ff-body);
   color: var(--clr-primary-400);
 }
+
 p:not([class]) {
   /* We used the above selector so the upcoming styles are applied
   to any p that doesn't have a class , which means that we don't 
@@ -156,9 +159,11 @@ p:not([class]) {
   /* The ch unit -from what I read - calculates the width
   of the character (zero) in the font family used . */
 }
+
 p[data-width='wide'] {
   max-width: 42ch;
 }
+
 /* button */
 .btn {
   border-radius: 100vmax;
@@ -179,15 +184,21 @@ p[data-width='wide'] {
   box-shadow: 0 1.125em 1em -1em var(--clr-accent-500);
   /* offset-x | offset-y | blur-radius | spread-radius | color */
 }
+
 .btn:hover {
   background-color: var(--clr-accent-300);
 }
+
 .btn[data-type='inverted'] {
   background-color: var(--clr-accent-100);
   color: var(--clr-accent-400);
 }
+
 .btn[data-type='inverted']:hover {
   color: var(--clr-accent-300);
+}
+.btn[data-shadow='none'] {
+  box-shadow: none;
 }
 
 /* primary navigation styling */
@@ -196,6 +207,7 @@ p[data-width='wide'] {
   justify-content: space-between;
   align-items: center;
 }
+
 .primary-navigation ul.nav-list {
   display: flex;
   gap: clamp(var(--size-400), 5vw, var(--size-700));
@@ -207,9 +219,11 @@ p[data-width='wide'] {
   color: var(--clr-primary-400);
   text-decoration: none;
 }
+
 .primary-navigation li a:hover {
   color: var(--clr-neutral-100);
 }
+
 /* navigation */
 
 .mobile-nav-toggle-js {
@@ -220,26 +234,31 @@ p[data-width='wide'] {
   width: 20px;
   height: 20px;
 }
+
 .mobile-nav-toggle-js:focus {
   outline: none;
 }
+
 .mobile-nav-toggle-js span {
-    position: absolute;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 4px;
-    background-color: var(--clr-primary-400);
-    border-radius: 2rem;
-    margin-top: 0.2rem;
-    transition: var(--transition-button);
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--clr-primary-400);
+  border-radius: 2rem;
+  margin-top: 0.2rem;
+  transition: var(--transition-button);
 }
+
 .mobile-nav-toggle-js span:first-child {
   top: 0;
 }
+
 .mobile-nav-toggle-js span:nth-child(2) {
   top: 8px;
 }
+
 .mobile-nav-toggle-js span:nth-child(3) {
   top: 16px;
 }
@@ -248,18 +267,70 @@ p[data-width='wide'] {
 .mobile-nav-toggle-js.close-btn span:nth-child(2) {
   visibility: hidden;
 }
+
 .mobile-nav-toggle-js.close-btn span:nth-child(1) {
   top: 8px;
   /* the 1st and 3rd children will be placed in the place of the second child */
   transform: rotate(45deg);
 }
+
 .mobile-nav-toggle-js.close-btn span:nth-child(3) {
   top: 8px;
   transform: rotate(-45deg);
 }
+
 .primary-header .mobile-nav-toggle-js {
   display: none;
 }
+
+/* footer navigation */
+
+.footer-nav a {
+  color: var(--clr-accent-100);
+  text-decoration: none;
+}
+
+footer .even-columns .primary-footer-logo-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer ul[aria-label='social links'] {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+
+}
+
+.footer-nav {
+  columns: 2;
+  gap: clamp(var(--size-400), 1vw, var(--size-900));
+}
+
+.footer-nav a:hover {
+  color: var(--clr-accent-400);
+}
+
+/* We can't style the hover state of the social icons because we used
+them in img tag . There was an approach in the video but I think that
+it is not that important to struggle with it . Using font awesome will
+make our lives much easier .  */
+footer form {
+  margin-bottom: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+footer input {
+  border-radius: 3rem;
+  outline: none;
+  border: 1px solid transparent;
+  padding: .75rem 2rem;
+}
+
 
 /* cta */
 .cta {
@@ -267,18 +338,21 @@ p[data-width='wide'] {
   isolation: isolate;
   text-align: center;
 }
+
 .cta::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: -1;
   background-image: url('images/bg-tablet-pattern.svg'),
-  url('images/bg-tablet-pattern.svg');
-  background-position: -15rem -5rem, 75rem -45rem;;
+    url('images/bg-tablet-pattern.svg');
+  background-position: -15rem -5rem, 75rem -45rem;
+  ;
   background-repeat: no-repeat;
   opacity: 0.1;
 
 }
+
 @media screen and (min-width: 50em) {
   .cta {
     text-align: left;
@@ -286,13 +360,15 @@ p[data-width='wide'] {
 }
 
 @media screen and (max-width: 50em) {
-  
+
   .primary-header .mobile-nav-toggle-js {
     display: block;
   }
+
   .primary-header button.btn {
     display: none;
   }
+
   .primary-header[data-overlay]::before {
     content: '';
     position: fixed;
@@ -301,15 +377,15 @@ p[data-width='wide'] {
     height: 100vh; */
     /* This will make the dropshadow fill the entire
     screen */
-    background-image: linear-gradient(rgba(0, 0, 0 , 0), rgba(0, 0, 0 , 0.8));
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
   }
 
   .mobile-nav-toggle-js {
     margin-top: -0.5rem;
     position: absolute;
     right: 2rem;
-}
-  
+  }
+
   .primary-navigation ul.nav-list {
     width: fit-content;
     max-width: 80vw;
@@ -333,10 +409,11 @@ p[data-width='wide'] {
     font-weight: var(--fw-bold);
     display: none;
   }
+
   .primary-navigation ul.nav-list.show {
     display: flex;
   }
-  
+
 }
 
 
@@ -344,15 +421,19 @@ p[data-width='wide'] {
 .text-primary-400 {
   color: var(--clr-primary-400);
 }
+
 .text-accent-400 {
   color: var(--clr-accent-400);
 }
+
 .text-accent-100 {
   color: var(--clr-accent-100);
 }
+
 .text-neutral-100 {
   color: var(--clr-neutral-100);
 }
+
 .text-neutral-900 {
   color: var(--clr-neutral-900);
 }
@@ -360,15 +441,19 @@ p[data-width='wide'] {
 .bg-primary-400 {
   background-color: var(--clr-primary-400);
 }
+
 .bg-accent-400 {
   background-color: var(--clr-accent-400);
 }
+
 .bg-accent-100 {
   background-color: var(--clr-accent-100);
 }
+
 .bg-neutral-100 {
   background-color: var(--clr-neutral-100);
 }
+
 .bg-neutral-900 {
   background-color: var(--clr-neutral-900);
 }
@@ -377,24 +462,36 @@ p[data-width='wide'] {
 .fw-bold {
   font-weight: var(--fw-bold);
 }
+
 .fw-semi-bold {
   font-weight: var(--fw-semi-bold);
 }
+
 .fw-regular {
   font-weight: var(--fw-regular);
 }
+
 .fs-primary-heading {
   font-size: var(--fs-primary-heading);
   line-height: 1.1;
 }
+
 .fs-secondary-heading {
   font-size: var(--fs-secondary-heading);
   line-height: 1.1;
 }
 
-.fs-300 {font-size: var(--fs-300);}
-.fs-400 {font-size: var(--fs-400);}
-.fs-500 {font-size: var(--fs-400);}
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-500 {
+  font-size: var(--fs-400);
+}
 
 /* classes naming convention : Here, classes for font sizes that have
 numbers are the ones that won't change , will fs classes with names
@@ -410,7 +507,8 @@ are the ones which will change on media query .  */
   the screen on smaller devices .  */
   margin-inline: auto;
 }
-.flow > * + * {
+
+.flow>*+* {
   /* The above selection is called the owl selector
   and is pretty amazing . It applies the styles to
   adjacent siblings in a container if each sibling
@@ -424,11 +522,14 @@ are the ones which will change on media query .  */
   we can define it in a div selector if we needed to 
   use it .  */
 }
+
 .even-columns {
   display: grid;
   gap: 1rem;
 }
+
 @media (min-width: 50em) {
+
   /* 50em === 800px */
   .even-columns {
     grid-auto-flow: column;
@@ -445,11 +546,13 @@ are the ones which will change on media query .  */
   the above property to modify the left margin and it will
   give the same effect .  */
 }
+
 @media (max-width: 600px) {
   .justify-self-end-md {
     justify-self: center;
   }
 }
+
 .vertical-align-center {
   align-items: center;
   /* The use of this class is to align the button a little
@@ -460,3 +563,59 @@ are the ones which will change on media query .  */
   font-size: var(--fs-nav);
 }
 
+/* footer navigation follow */
+@media screen and (max-width: 50em) {
+  footer .primary-footer-wrapper {
+    display: grid;
+    gap: var(--size-700);
+    text-align: center;
+    grid-template-areas:
+      'form'
+      'nav'
+      'social-links';
+  }
+
+  footer .even-columns .primary-footer-logo-social {
+    /* I wrote the selector like that bec on line 290 it is
+    written that way, so in order to modify the above
+    styles I should use the same way of writing .  */
+    grid-area: social-links;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--size-700); /*3rem*/
+
+  }
+
+  footer .primary-footer-nav {
+    grid-area: nav;
+  }
+
+  footer .primary-footer-form {
+    grid-area: form;
+
+    display: grid;
+    align-content: space-between;
+  }
+}
+
+/* Explanation for the footer navigation : above , I declared the media query
+that will modify the footer on small screens . Also, I have modified the html so that
+the div with class of even columns in the footer also has the class (primary-footer-wrapper).
+Since the media query is at the end of the file , then when on a small screen , the
+stylings related to the primary-footer-wrapper will take place , while on desktop the
+class even columns will take effect , so thus we didn't break the design because 
+every screen size has a class that deals with it .  */
+
+
+/* ===================== try the below approach ================ */
+/* Another approach we can try : kevin modified the .primary-footer-wrapper so that
+on min-width: 50em he modified the grid-template-areas to be "social-links nav form" . 
+
+Try the above approach*/
+
+/* @media screen and (min-width: 50em) {
+  .primary-footer-wrapper {
+    grid-template-areas: 'social-links nav form';
+  }
+} */
+/* After trial , it gave the same results .  */
