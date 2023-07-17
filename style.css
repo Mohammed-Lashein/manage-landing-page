@@ -3,6 +3,7 @@
   --clr-accent-400: hsl(12, 88%, 59%);
   --clr-accent-300: hsl(12, 88%, 75%);
   --clr-accent-100: hsl(0, 0%, 100%);
+  --clr-accent-200: hsl(13, 100%, 96%);
 
   --clr-primary-400: hsl(228, 39%, 23%);
 
@@ -142,7 +143,9 @@ picture {
 .padding-block-700 {
   padding-block: var(--size-700);
 }
-
+.margin-bottom-700 {
+  margin-block-end: var(--size-700);
+}
 /* general styling */
 body {
   font-size: var(--fs-body);
@@ -197,6 +200,7 @@ p[data-width='wide'] {
 .btn[data-type='inverted']:hover {
   color: var(--clr-accent-300);
 }
+
 .btn[data-shadow='none'] {
   box-shadow: none;
 }
@@ -416,6 +420,79 @@ footer input {
 
 }
 
+/* numbered items */
+.numbered-items {
+  counter-reset: count;
+}
+
+.numbered-items li {
+  counter-increment: count;
+  width: fit-content;
+  margin-inline: auto;
+  /* The use of the above two properties is that before
+  the break point where the page gets the two columns
+  layout , we want the numbered list to be aligned to
+   the middle instead of being aligned to the left . */
+}
+
+.numbered-items div::before {
+  content: '0' counter(count);
+  color: var(--clr-accent-100);
+  background-color: var(--clr-accent-400);
+  padding: var(--size-200) var(--size-500);
+  border-radius: 100vw;
+  font-weight: var(--fw-bold);
+}
+
+.numbered-items div {
+  display: grid;
+  position: relative;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  column-gap: var(--size-400);
+  /*1rem*/
+}
+
+.numbered-items__body {
+  grid-column: 1 / -1;
+  /* The -1 value means that counting will
+  start from the end edge of the container .  */
+}
+
+@media screen and (min-width: 30em) {
+  .numbered-items__body {
+    grid-column: 2 / -1;
+  }
+}
+
+@media screen and (max-width: 30em) {
+
+  .numbered-items__title::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    grid-row: 1 / 2;
+    border-radius: 100vw;
+    background-color: var(--clr-accent-200);
+  }
+
+}
+p.numbered-items__description {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 50vw;
+  color: var(--clr-neutral-100);
+}
+@media screen and (min-width: 50em) {
+  p.numbered-items__description {
+    text-align: left;
+  }
+}
+
+.numbered-items__title {
+  color: var(--clr-primary-400);
+}
 
 /* utility classes */
 .text-primary-400 {
@@ -582,7 +659,8 @@ are the ones which will change on media query .  */
     grid-area: social-links;
     display: flex;
     flex-direction: column-reverse;
-    gap: var(--size-700); /*3rem*/
+    gap: var(--size-700);
+    /*3rem*/
 
   }
 
