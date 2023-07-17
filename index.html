@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title> Landing page</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./all.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts. googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
@@ -18,7 +19,10 @@
         <img src="images/logo.svg" alt="Manage">
       </a>
       <button class="mobile-nav-toggle-js" aria-controls="primary navigation" aria-expanded="false">
-        <span></span><span></span><span></span><span class="visually hidden" style="visibility: hidden">Menu</span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="visually-hidden">Menu</span>
       </button>
       <!-- We added the id of primary navigation to the nav because
       screen readers can link the aria-controls attribute with an id of an element 
@@ -127,7 +131,58 @@
 
     <section class="carousel | padding-block-900">
       <h2 class="fs-secondary-heading fw-bold">What they've said</h2>
-      <!-- carousel here -->
+      <div class="carousel__testimonials">
+        <div class="carousel__testimonial">
+          <div class="carousel__user-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h4 class="carousel__customer-name">Anisha Li</h4>
+          <p class="carousel__customer-review">
+            “Manage has supercharged our team's workflow. The ability to maintain 
+            visibility on larger milestones at all times keeps everyone motivated.”
+          
+          </p>
+
+        </div>
+        <div class="carousel__testimonial">
+          <div class="carousel__user-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h4 class="carousel__customer-name">Ali Bravo</h4>
+          <p class="carousel__customer-review">  “We have been able to cancel so many other subscriptions since using 
+            Manage. There is no more cross-channel confusion and everyone is much 
+            more focused.”
+          </p>
+
+        </div>
+        <div class="carousel__testimonial">
+          <div class="carousel__user-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h4 class="carousel__customer-name">  Richard Watts
+          </h4>
+          <p class="carousel__customer-review">  “Manage allows us to provide structure and process. It keeps us organized 
+            and focused. I can't stop recommending them to everyone I talk to!”
+          </p>
+
+        </div>
+        <div class="carousel__testimonial">
+          <div class="carousel__user-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <h4 class="carousel__customer-name">Shanai Gough</h4>
+          <p class="carousel__customer-review">  “Their software allows us to track, manage and collaborate on our projects 
+            from anywhere. It keeps the whole team in-sync without being intrusive.”
+          </p>
+        </div>
+      </div>
+      <div class="pagination-container">
+        <span class="pagination__item active">
+        </span>
+        <span class="pagination__item"></span>
+        <span class="pagination__item"></span>
+        <span class="pagination__item"></span>
+      </div>
       <button class="btn">Get Started</button>
     </section>
 

@@ -9,6 +9,7 @@
 
   /* --clr-neutral-100: hsl(232, 12%, 13%); */
   --clr-neutral-100: hsl(0, 0%, 63%);
+  --clr-neutral-100-light: hsl(0, 3%, 94%);
   --clr-neutral-900: hsl(232, 12%, 13%);
 
   --ff-primary: 'Be Vietnam Pro', sans-serif;
@@ -143,9 +144,11 @@ picture {
 .padding-block-700 {
   padding-block: var(--size-700);
 }
+
 .margin-bottom-700 {
   margin-block-end: var(--size-700);
 }
+
 /* general styling */
 body {
   font-size: var(--fs-body);
@@ -254,6 +257,9 @@ p[data-width='wide'] {
   margin-top: 0.2rem;
   transition: var(--transition-button);
 }
+.visually-hidden {
+  visibility: hidden;
+}
 
 .mobile-nav-toggle-js span:first-child {
   top: 0;
@@ -357,11 +363,14 @@ footer input {
 
 }
 
+
+
 @media screen and (min-width: 50em) {
   .cta {
     text-align: left;
   }
 }
+/* mobile nav toggle media queries */
 
 @media screen and (max-width: 50em) {
 
@@ -478,12 +487,14 @@ footer input {
   }
 
 }
+
 p.numbered-items__description {
   text-align: center;
   margin-inline: auto;
   max-width: 50vw;
   color: var(--clr-neutral-100);
 }
+
 @media screen and (min-width: 50em) {
   p.numbered-items__description {
     text-align: left;
@@ -697,3 +708,86 @@ Try the above approach*/
   }
 } */
 /* After trial , it gave the same results .  */
+
+/* carousel styling */
+
+.carousel {
+  text-align: center;
+}
+
+.carousel__testimonials {
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 2rem auto;
+  /* flex-wrap: wrap; */
+}
+
+.carousel__testimonial {
+  border-radius: 2rem;
+  background-color: var(--clr-neutral-100-light);
+  padding: var(--size-400);
+}
+
+.carousel__user-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--clr-accent-300);
+  font-size: 2rem;
+  position: relative;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel__customer-name {
+  color: var(--clr-primary-400);
+}
+
+.carousel__customer-review {
+  color: var(--clr-neutral-100);
+}
+@media screen and (max-width: 50em) {
+  .carousel__testimonials {
+    max-width: 80vw;
+    margin: 2rem auto;
+    position: relative;
+    min-height: 20vh;
+    overflow: hidden;
+  }
+  .carousel__testimonial {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .carousel__user-icon {
+    top: -.5rem;
+  }
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  span.pagination__item {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--clr-accent-400);
+    cursor: pointer;
+  }
+  span.pagination__item.active {
+    background-color: var(--clr-accent-400);
+  }
+}
+@media screen and (max-width: 460px) {
+  .carousel__testimonials {
+    min-width: 95vw;
+    min-height: 27vh;
+  }
+}
