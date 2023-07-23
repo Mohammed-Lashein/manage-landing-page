@@ -438,10 +438,7 @@ footer input {
 .numbered-items li {
   counter-increment: count;
   width: fit-content;
-  /* The use of the above two properties is that before
-  the break point where the page gets the two columns
-  layout , we want the numbered list to be aligned to
-   the middle instead of being aligned to the left . */
+  
 }
 
 .numbered-items div::before {
