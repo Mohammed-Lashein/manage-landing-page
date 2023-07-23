@@ -383,6 +383,7 @@ footer input {
   }
 
   .primary-header[data-overlay]::before {
+    /* The data-overlay will be added using js */
     content: '';
     position: fixed;
     inset: 0;
@@ -503,6 +504,65 @@ p.numbered-items__description {
 
 .numbered-items__title {
   color: var(--clr-primary-400);
+}
+
+/* image for first section */
+@media (max-width: 50em) {
+  .hero__image {
+    order: -1;
+  }
+  .hero {
+    text-align: center;
+  }
+  .hero p {
+    margin-inline: auto;
+  }
+}
+.hero__image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  width: 87%;
+  max-height: 70vh;
+  aspect-ratio: 1 / 1.3;
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-image: url('images/bg-tablet-pattern.svg');
+}
+@media (min-width: 50em) {
+  .hero__image::before {
+    width: 45%;
+  }
+}
+
+/* sales points */
+.sales-points h2 {
+  text-align: center;
+}
+.sales-points {
+  position: relative;
+}
+.sales-points::before {
+  content: '';
+  position: absolute;
+  bottom: 90%;
+  right: 0;
+  z-index: -1;
+  width: 36%;
+  height: 62vh;
+  background-image: url('images/bg-tablet-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+@media (min-width: 50em) {
+  .sales-points::before {
+    bottom: -20%;
+    width: 29%;
+    left: 0;
+    background-position: top right;
+  }
 }
 
 /* utility classes */
@@ -685,6 +745,9 @@ are the ones which will change on media query .  */
     display: grid;
     align-content: space-between;
   }
+  .primary-footer-wrapper p.primary-footer__copyright {
+    margin-inline: auto;
+  }
 }
 
 /* Explanation for the footer navigation : above , I declared the media query
@@ -785,7 +848,7 @@ Try the above approach*/
     background-color: var(--clr-accent-400);
   }
 }
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 630px) {
   .carousel__testimonials {
     min-width: 95vw;
     min-height: 27vh;

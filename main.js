@@ -6,6 +6,8 @@ const primaryNav = document.querySelector('.primary-navigation ul');
 let carouselContainer = document.querySelector('.carousel__testimonials');
 let paginationItems = Array.from(document.querySelectorAll('.pagination__item'));
 
+const copyrightDate = document.querySelector('.date');
+
 // functions
 function handlenavToggle() {
     navToggle.classList.toggle('close-btn');
@@ -35,6 +37,8 @@ function handlePagination() {
         item.style.transform = `translateX(-${Number(this.dataset.index) * 100}%)`;
     })
 }
+
+copyrightDate.textContent = " "+new Date().getFullYear();
 
 // Adding event listeners
 navToggle.addEventListener('click', handlenavToggle);
