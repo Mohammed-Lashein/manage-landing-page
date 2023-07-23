@@ -534,9 +534,6 @@ p.numbered-items__description {
 }
 
 /* sales points */
-.sales-points h2 {
-  text-align: center;
-}
 .sales-points {
   position: relative;
 }
