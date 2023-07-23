@@ -780,6 +780,7 @@ Try the above approach*/
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   margin: 2rem auto;
+  
   /* flex-wrap: wrap; */
 }
 
@@ -810,11 +811,11 @@ Try the above approach*/
 }
 @media screen and (max-width: 50em) {
   .carousel__testimonials {
-    max-width: 80vw;
+    max-width: 95vw;
     margin: 2rem auto;
     position: relative;
-    min-height: 20vh;
     overflow: hidden;
+    min-height: 180px;
   }
   .carousel__testimonial {
     position: absolute;
@@ -844,9 +845,8 @@ Try the above approach*/
     background-color: var(--clr-accent-400);
   }
 }
-@media screen and (max-width: 630px) {
+@media screen and (min-width: 400px) and(max-width: 630px) {
   .carousel__testimonials {
     min-width: 95vw;
-    min-height: 27vh;
   }
 }
