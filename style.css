@@ -438,7 +438,6 @@ footer input {
 .numbered-items li {
   counter-increment: count;
   width: fit-content;
-  margin-inline: auto;
   /* The use of the above two properties is that before
   the break point where the page gets the two columns
   layout , we want the numbered list to be aligned to
