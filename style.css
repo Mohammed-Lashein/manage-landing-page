@@ -812,7 +812,7 @@ Try the above approach*/
     margin: 2rem auto;
     position: relative;
     overflow: hidden;
-    min-height: 205px;
+    min-height: 230px;
   }
   .carousel__testimonial {
     position: absolute;
