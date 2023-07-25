@@ -820,6 +820,9 @@ Try the above approach*/
     left: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
   .carousel__user-icon {
     top: -.5rem;
